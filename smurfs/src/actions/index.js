@@ -19,7 +19,7 @@ export const getData = () => {
       })
       .catch(err => {
           console.log("this is an error", err)
-        dispatch({ type: FETCH_SMURF_DATA_FAILURE, });
+        dispatch({ type: FETCH_SMURF_DATA_FAILURE, payload: err.response });
       });
   };
 };
