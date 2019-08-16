@@ -67,13 +67,15 @@ const SmurfList = (props) => {
               {props.smurfArray &&
             props.smurfArray.map((smurf, index) => <Smurf key={smurf.id} smurf={smurf}/>)
              }
+             {props.error && <p>Beware the error!{props.error}</p>}
     </div>
     )
  }
 const mapStateToProps = state => {
     return {
         test: state.test,
-        smurfArray: state.smurfArray
+        smurfArray: state.smurfArray,
+        error: state.error
        
     }
 }

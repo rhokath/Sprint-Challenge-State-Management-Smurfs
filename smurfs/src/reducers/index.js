@@ -1,6 +1,10 @@
-import {  FETCH_SMURF_DATA_START, FETCH_SMURF_DATA_SUCCESS, 
-    FETCH_SMURF_DATA_FAILURE, DELETE_SMURF_DATA_START, DELETE_SMURF_DATA_SUCCESS,
-    POST_SMURF_DATA_START, POST_SMURF_DATA_SUCCESS} from "../actions";
+import {  FETCH_SMURF_DATA_START, 
+    FETCH_SMURF_DATA_SUCCESS, 
+    FETCH_SMURF_DATA_FAILURE, 
+    DELETE_SMURF_DATA_START,
+     DELETE_SMURF_DATA_SUCCESS,
+    POST_SMURF_DATA_START, 
+    POST_SMURF_DATA_SUCCESS} from "../actions";
 
 const intitialState = {
     test: "test",
@@ -24,6 +28,12 @@ export const reducer = (state = intitialState, action)=> {
                 smurfArray: action.payload
                 
                 }
+        case FETCH_SMURF_DATA_FAILURE:
+            return{
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
         case POST_SMURF_DATA_START:
             return{
                 ...state,
